@@ -67,6 +67,37 @@ public final class SortContext {
     return flag - 1;
   }
 
+  public final static Integer[] insertionSort(Integer[] inputArray) {
+    final int LEN = inputArray.length;
+    int preIndex, currVal;
+    for (int i = 1; i < LEN; i++) {
+      preIndex = i - 1;
+      currVal = inputArray[i];
+      while (preIndex >= 0 && inputArray[preIndex] > currVal) {
+        // move value of preIndex to preIndex+1
+        inputArray[preIndex + 1] = inputArray[preIndex];
+        preIndex--;
+      }
+      inputArray[preIndex + 1] = currVal;
+    }
+    return inputArray;
+  }
+
+  public final static Integer[] selectionSort(Integer[] inputArray) {
+    final int LEN = inputArray.length;
+    for (int i = 0; i < LEN - 1; i++) {
+      int min_index = i;
+      for (int j = i + 1; j < LEN; j++) {
+        if (inputArray[j] < inputArray[min_index]) {
+          min_index = j;
+        }
+      }
+      if (min_index != i)
+        swap(inputArray, min_index, i);
+    }
+    return inputArray;
+  }
+
   private static void swap(Integer[] inputArray, int i, int j) {
     int temp = inputArray[j];
     inputArray[j] = inputArray[i];
