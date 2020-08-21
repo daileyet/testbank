@@ -13,8 +13,8 @@ public class InsertionSortDemo extends AbstractSortDemo {
    * @see com.openthinks.demo.sort.AbstractSortDemo#doSort(java.lang.Integer[])
    */
   @Override
-  protected void doSort(Integer[] inputArray) {
-    SortContext.insertionSort(inputArray);
+  protected Integer[] doSort(Integer[] inputArray) {
+    return SortContext.insertionSort(inputArray);
   }
 
   /* (non-Javadoc)
@@ -22,7 +22,7 @@ public class InsertionSortDemo extends AbstractSortDemo {
    */
   @Override
   protected String keyParam() {
-    return "--SELECTION";
+    return "--INSERTION";
   }
 
 }

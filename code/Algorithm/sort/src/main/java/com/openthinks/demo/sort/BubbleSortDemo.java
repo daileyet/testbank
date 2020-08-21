@@ -18,8 +18,8 @@ public class BubbleSortDemo extends AbstractSortDemo {
   }
 
   @Override
-  protected void doSort(Integer[] inputArray) {
-    SortContext.bubbleSort(inputArray);
+  protected Integer[] doSort(Integer[] inputArray) {
+    return SortContext.bubbleSort(inputArray);
   }
 
 }

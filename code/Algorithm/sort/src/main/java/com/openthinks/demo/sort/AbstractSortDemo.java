@@ -31,15 +31,14 @@ public abstract class AbstractSortDemo extends AbstractDemo {
     List<String> list = pp.getParams();
     if (pp.isEmpty()) {
       list = preparedDefaultUnSortedList();
-    } else {
-      LOGGER.info("Input  array{0}:[{1}]", keyParam(), pp.getAllJoined(","));
     }
+    LOGGER.info("Input  array{0}:[{1}]", keyParam(), String.join(",", list));
     Integer[] inputArray = Converter.source(list).convert2Array(Integer.class);
     long start = DateUtils.currentTimeMillis();
-    doSort(inputArray);
+    inputArray = doSort(inputArray);
     long end = DateUtils.currentTimeMillis();
     LOGGER.info("Sorted array{0}:[{1}]", keyParam(), CommonUtilities.toString4Array(inputArray));
-    LOGGER.info("Sorted array{0} cost time={1}", keyParam(), (end - start));
+    LOGGER.info("Sorted array{0} cost time={1}\n", keyParam(), (end - start));
   }
 
   private static List<String> preparedDefaultUnSortedList() {
@@ -52,7 +51,7 @@ public abstract class AbstractSortDemo extends AbstractDemo {
     return DEFAULT_LIST;
   }
 
-  protected abstract void doSort(Integer[] inputArray);
+  protected abstract Integer[] doSort(Integer[] inputArray);
 
 
 }

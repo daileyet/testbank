@@ -13,8 +13,8 @@ public class SelectionSortDemo extends AbstractSortDemo {
    * @see com.openthinks.demo.sort.AbstractSortDemo#doSort(java.lang.Integer[])
    */
   @Override
-  protected void doSort(Integer[] inputArray) {
-    SortContext.selectionSort(inputArray);
+  protected Integer[] doSort(Integer[] inputArray) {
+    return SortContext.selectionSort(inputArray);
   }
 
   /* (non-Javadoc)

@@ -2,3 +2,5 @@ com.openthinks.demo.sort.BubbleSortDemo
 com.openthinks.demo.sort.QuickSortDemo
 com.openthinks.demo.sort.SelectionSortDemo
 com.openthinks.demo.sort.SelectionSortDemo
+com.openthinks.demo.sort.MergeSortDemo
+com.openthinks.demo.sort.CountingSortDemo
