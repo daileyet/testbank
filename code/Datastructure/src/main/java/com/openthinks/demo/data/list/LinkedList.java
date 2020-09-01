@@ -38,7 +38,7 @@ public class LinkedList<T> implements List<T> {
 	public void append(T t) {
 		Node preNode = findPrevNode(size());
 		Node newNode = new Node(t, null);
-		preNode.next=newNode;
+		preNode.next = newNode;
 		synchronized (this) {
 			size++;
 		}
@@ -51,6 +51,8 @@ public class LinkedList<T> implements List<T> {
 	 */
 	@Override
 	public void insert(int index, T t) {
+		if ((index + 2) > size)
+			throw new ArrayIndexOutOfBoundsException(index);
 		Node preNode = findPrevNode(index);
 		Node newNode = new Node(t, preNode.next);
 		preNode.next = newNode;
@@ -66,6 +68,8 @@ public class LinkedList<T> implements List<T> {
 	 */
 	@Override
 	public T remove(int index) {
+		if ((index + 1) > size)
+			throw new ArrayIndexOutOfBoundsException(index);
 		Node preNode = findPrevNode(index);
 		Node removed = preNode.next;
 		preNode.next = removed.next;
@@ -83,22 +87,21 @@ public class LinkedList<T> implements List<T> {
 	 */
 	@Override
 	public T get(int index) {
-		if(size==0) {
+		if ((index + 1) > size)
 			throw new ArrayIndexOutOfBoundsException(index);
-		}
 		Node preNode = findPrevNode(index);
 		return preNode.next.obj;
 	}
 
 	Node findPrevNode(int index) {
-		if (index < 0 || (index ) > size())
+		if (index < 0 || (index) > size)
 			throw new ArrayIndexOutOfBoundsException(index);
 		Node node = head;
-		if(index==0)
+		if (index == 0)
 			return node;
-		int i=index;
-		while(i>0) {
-			node=node.next;
+		int i = index;
+		while (i > 0) {
+			node = node.next;
 			i--;
 		}
 		return node;

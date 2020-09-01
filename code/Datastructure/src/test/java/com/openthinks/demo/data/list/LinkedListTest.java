@@ -23,6 +23,7 @@ public class LinkedListTest {
 			Assert.assertEquals(i+1, testList.size());
 			Assert.assertEquals(String.valueOf(i), testList.get(i));
 		}
+		
 		Assert.assertEquals(10, testList.size());
 		String deleted = testList.remove(9);
 		Assert.assertEquals((9), testList.size());
