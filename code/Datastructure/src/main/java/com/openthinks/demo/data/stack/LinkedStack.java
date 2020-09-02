@@ -49,5 +49,10 @@ public class LinkedStack<T> implements Stack<T> {
 			return null;
 		return list.get(size-1);
 	}
+	
+	@Override
+	public boolean isEmpty() {
+		return list.size()==0;
+	}
 
 }

@@ -37,4 +37,8 @@ public class LinkedQueue<T> implements Queue<T> {
 		return list.remove(0);
 	}
 
+	@Override
+	public boolean isEmpty() {
+		return list.size()==0;
+	}
 }
