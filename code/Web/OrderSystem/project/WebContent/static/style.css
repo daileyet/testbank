@@ -1,0 +1,32 @@
+.login_input{
+	width:100px;
+	height:15px;
+	padding:3px;
+}
+
+.login_div{
+	padding:3px;
+	border-bottom: 1px solid grey;
+}
+
+.table_prod{
+	padding:2px;
+	/* border:1px solid grey; */
+}
+
+.table_prod td{
+	border-bottom:1px solid grey;
+}
+
+.add_cart{
+	margin:5px;
+	font-size:16px;
+	text-decoration:none;font-weight: bold;
+}
+
+.remove_cart{
+	margin:5px;
+	font-size:16px;
+	text-decoration:none;
+	font-weight: bold;
+}
